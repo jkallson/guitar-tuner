@@ -28,7 +28,7 @@ print("* done recording")
 stream.stop_stream()
 stream.close()
 p.terminate()
-
+#sadasdasdas
 wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
 wf.setnchannels(CHANNELS)
 wf.setsampwidth(p.get_sample_size(FORMAT))
