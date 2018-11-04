@@ -1,4 +1,4 @@
-import pyaudio
+import pyaudio     #VIttusmehed
 import wave
 
 CHUNK = 1024
