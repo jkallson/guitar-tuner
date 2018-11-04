@@ -1,37 +1,29 @@
 import pyaudio
-import wave
+import numpy as np
+from time import sleep
+np.set_printoptions(suppress=True) # don't use scientific notation
 
-CHUNK = 1024
-FORMAT = pyaudio.paInt16
-CHANNELS = 2
-RATE = 44100
-RECORD_SECONDS = 5
-WAVE_OUTPUT_FILENAME = "output.wav"
+CHUNK = 4096 # number of data points to read at a time
+RATE = 44100 # time resolution of the recording device (Hz)
+TARGET = 2100 # show only this one frequency
 
-p = pyaudio.PyAudio()
+p=pyaudio.PyAudio() # start the PyAudio class
+stream=p.open(format=pyaudio.paInt16,channels=1,rate=RATE,input=True,
+              frames_per_buffer=CHUNK) #uses default input device
 
-stream = p.open(format=FORMAT,
-                channels=CHANNELS,
-                rate=RATE,
-                input=True,
-                frames_per_buffer=CHUNK)
+# create a numpy array holding a single read of audio data
+for i in range(400): #to it a few times just to see
+    data = np.fromstring(stream.read(CHUNK),dtype=np.int16)
+    fft = abs(np.fft.fft(data).real)
+    fft = fft[:int(len(fft)/2)] # keep only first half
+    freq = np.fft.fftfreq(CHUNK,1.0/RATE)
+    freq = freq[:int(len(freq)/2)] # keep only first half
+    assert freq[-1]>TARGET, "ERROR: increase chunk size"
+    val = fft[np.where(freq>TARGET)[0][0]]
+    print(val)
+    sleep(0.2)
 
-print("* recording")
-
-frames = []
-for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-    data = stream.read(CHUNK)
-    frames.append(data)
-
-print("* done recording")
-
+# close the stream gracefully
 stream.stop_stream()
 stream.close()
 p.terminate()
-#sadasdasdas
-wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
-wf.setnchannels(CHANNELS)
-wf.setsampwidth(p.get_sample_size(FORMAT))
-wf.setframerate(RATE)
-wf.writeframes(b''.join(frames))
-wf.close()
