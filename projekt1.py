@@ -7,10 +7,27 @@ def tervita():
     tervitus = '0 väravat '
     messagebox.showinfo(message=tervitus) ##kast
 
+def ok():
+    uus = Tk()
+    uus.title('valitud')
+    uus.geometry('300x300')
+    
+    if variable.get() == 'one':
+        D = ttk.Button(uus, text="Mängi", command=tervita)
+        D.place(x=0, y=120, width=100)
 
 raam = Tk()
 raam.title("Kitarrihäälestaja")
-raam.geometry("300x100")
+raam.geometry("300x300")
+
+variable = StringVar(raam)
+variable.set("one")
+
+w = OptionMenu(raam, variable, "one", "two", "three")
+w.pack()
+
+button = Button(raam, text="OK", command=ok)
+button.pack()
 
 
 E = ttk.Button(raam, text="Mängi", command=tervita)
