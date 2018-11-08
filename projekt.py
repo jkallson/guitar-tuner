@@ -1,12 +1,10 @@
-<<<<<<< .merge_file_a22944
 import pyaudio     #VIttusmehed
 import wave
-=======
 import pyaudio
 import numpy as np
 from time import sleep
 np.set_printoptions(suppress=True) # don't use scientific notation
->>>>>>> .merge_file_a21208
+
 
 CHUNK = 4096 # number of data points to read at a time
 RATE = 44100 # time resolution of the recording device (Hz)
@@ -29,6 +27,7 @@ for i in range(400): #to it a few times just to see
     sleep(0.2)
 
 # close the stream gracefully
+
 stream.stop_stream()
 stream.close()
 p.terminate()
