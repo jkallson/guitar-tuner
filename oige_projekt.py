@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 
-
+from mp3play import *
 
 from PIL import Image, ImageTk
 
@@ -16,12 +16,9 @@ raam.geometry("300x300")
 canv = Canvas(raam, height=300, width=300, bg ="white")
 canv.grid(row=0, column=0)
 
-background_image=tk.PhotoImage("pilt.jpg")
-background_label = tk.Label(parent, image=background_image)
-background_label.place(x=0, y=0, relwidth=1, relheight=1)
-
-C.pack()
-
+img = ImageTk.PhotoImage(Image.open("pilt.jpg"))
+canv.create_image(20, 20, anchor=NW, image=img)
+canv.pack()
 mainloop()
 
 def tervita():
@@ -32,7 +29,7 @@ def ok():
     uus = Tk()
     uus.title('valitud')
     uus.geometry('300x300')
-    
+
     if variable.get() == 'one':
         E = ttk.Button(uus, text="Mängi", command=tervita)
         E.place(x=0, y=0, width=100)
@@ -51,7 +48,7 @@ def ok():
 
         F = ttk.Button(uus, text="Mängi", command=tervita)
         F.place(x=0, y=150, width=100)
-        
+
 
 variable = StringVar(raam)
 variable.set("one")
@@ -64,10 +61,10 @@ button.pack()
 
 
 
-
-F = ttk.Button(raam, text="Mängi", command=ok)
+madal_e = mp3play.load("standard_e_korge.mp3"); play=lambda :madal_e.play()
+F = ttk.Button(raam, text="Mängi", command=play)
 F.place(x=0, y=150, width=100)
 
 
-background_label.photo=background
+
 raam.mainloop()
