@@ -7,16 +7,21 @@ from winsound import *
 raam = Tk()
 raam.title("Kitarrihäälestaja")
 raam.geometry("300x300")
+##raam.config(bg='black')
 
-"""
-canv = Canvas(raam, height=300, width=300, bg ="white")
-canv.grid(row=0, column=0)
 
-img = ImageTk.PhotoImage(Image.open("pilt.jpg"))
-canv.create_image(20, 20, anchor=NW, image=img)
-canv.pack()
-mainloop()
-"""
+background_image = ImageTk.PhotoImage(Image.open("pilt.jpg"))
+background_label = Label(raam, image=background_image)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+##canv = Canvas(raam, height=300, width=300, bg ="white")
+##canv.grid(row=0, column=0)
+##
+##img = ImageTk.PhotoImage(Image.open("pilt.jpg"))
+##canv.create_image(20, 20, anchor=NW, image=img)
+##canv.pack()
+##mainloop()
+
 a_keel = lambda: PlaySound('standard_a.wav', SND_FILENAME)
 e_korge = lambda: PlaySound('standard_e_korge.wav', SND_FILENAME)
 d_keel = lambda: PlaySound('standard_d', SND_FILENAME)
