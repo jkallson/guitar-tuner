@@ -37,7 +37,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 VIRTUAL_ENV="C:\Users\Janar\Documents\guitar-tuner\venv"
+=======
+VIRTUAL_ENV="D:\Documents\guitar-tuner\venv"
+>>>>>>> 9a103faf50d3a37183bd061141cf8deb4cd0fa5d
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!C:\Users\Janar\Documents\guitar-tuner\venv\Scripts\python.exe
+=======
+#!D:\Documents\guitar-tuner\venv\Scripts\python.exe
+>>>>>>> 9a103faf50d3a37183bd061141cf8deb4cd0fa5d
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==39.1.0','console_scripts','easy_install-3.7'
 __requires__ = 'setuptools==39.1.0'
 import re

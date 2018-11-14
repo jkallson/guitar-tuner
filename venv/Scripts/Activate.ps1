@@ -27,7 +27,11 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
+<<<<<<< HEAD
 $env:VIRTUAL_ENV="C:\Users\Janar\Documents\guitar-tuner\venv"
+=======
+$env:VIRTUAL_ENV="D:\Documents\guitar-tuner\venv"
+>>>>>>> 9a103faf50d3a37183bd061141cf8deb4cd0fa5d
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name
