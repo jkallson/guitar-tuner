@@ -1,6 +1,12 @@
 import pyaudio     #VIttusmehed
 import wave
+
 import pyaudio
+import numpy as np
+from time import sleep
+np.set_printoptions(suppress=True) # don't use scientific notation
+
+
 import numpy as np
 from time import sleep
 np.set_printoptions(suppress=True) # don't use scientific notation
@@ -23,8 +29,9 @@ for i in range(400): #to it a few times just to see
     freq = freq[:int(len(freq)/2)] # keep only first half
     assert freq[-1]>TARGET, "ERROR: increase chunk size"
     val = fft[np.where(freq>TARGET)[0][0]]
-    print(val)
-    sleep(0.2)
+    if val > 400:
+        print(val)
+        sleep(0.2)
 
 # close the stream gracefully
 
