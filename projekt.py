@@ -1,4 +1,3 @@
-
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
@@ -90,7 +89,7 @@ def ok():
 
     elif variable.get() == 'Drop C':
         E = ttk.Button(uus, text="C", command=drop_c_e)
-        E.place(x=0, y=30, width=100)
+        E.place(x=0, y=0, width=100)
 
         A = ttk.Button(uus, text="G", command=drop_c_a)
         A.place(x=0, y=30, width=100)
@@ -117,6 +116,10 @@ w.pack()
 button = Button(raam, text="OK", command=ok)
 button.pack()
 
+def answer():
+    messagebox.showinfo("Quit", "Thank you for using Guitar tuner")
+    raam.destroy()
+Button(text='Quit', command=answer).pack(side=BOTTOM)
 
 
 
