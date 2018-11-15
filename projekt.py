@@ -43,8 +43,12 @@ def tervita():
 
 def ok():
     uus = Tk()
-    uus.title('valitud')
+    uus.title('')
     uus.geometry('300x300')
+    
+##    background_image = ImageTk.PhotoImage(Image.open("pilt.jpg"))
+##    background_label = Label(uus, image=background_image)
+##    background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
     if variable.get() == 'Standard Tuning':
         E = ttk.Button(uus, text="E", command=e_madal)
