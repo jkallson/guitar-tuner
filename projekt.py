@@ -42,13 +42,13 @@ def tervita():
     messagebox.showinfo(message=tervitus) ##kast
 
 def ok():
-    uus = Tk()
-    uus.title('')
+    uus = Toplevel()
+    uus.title(variable.get())
     uus.geometry('300x300')
     
-##    background_image = ImageTk.PhotoImage(Image.open("pilt.jpg"))
-##    background_label = Label(uus, image=background_image)
-##    background_label.place(x=0, y=0, relwidth=1, relheight=1)
+    background_image = ImageTk.PhotoImage(Image.open("pilt.jpg"))
+    background_label = Label(uus, image=background_image)
+    background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
     if variable.get() == 'Standard Tuning':
         E = ttk.Button(uus, text="E", command=e_madal)
@@ -90,7 +90,7 @@ def ok():
 
     elif variable.get() == 'Drop C':
         E = ttk.Button(uus, text="C", command=drop_c_e)
-        E.place(x=0, y=30, width=100)
+        E.place(x=0, y=0, width=100)
 
         A = ttk.Button(uus, text="G", command=drop_c_a)
         A.place(x=0, y=30, width=100)
