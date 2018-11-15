@@ -47,6 +47,7 @@ def ok():
     
     background_image = ImageTk.PhotoImage(Image.open("pilt.jpg"))
     background_label = Label(uus, image=background_image)
+    background_label.image = background_image
     background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
     if variable.get() == 'Standard Tuning':
