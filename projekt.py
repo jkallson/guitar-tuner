@@ -1,4 +1,3 @@
-
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
@@ -117,6 +116,10 @@ w.pack()
 button = Button(raam, text="OK", command=ok)
 button.pack()
 
+def answer():
+    messagebox.showinfo("Quit", "Thank you for using Guitar tuner")
+    raam.destroy()
+Button(text='Quit', command=answer).pack(side=BOTTOM)
 
 
 
