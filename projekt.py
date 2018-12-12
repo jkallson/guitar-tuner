@@ -65,7 +65,6 @@ drop_a_e = lambda: PlaySound('helid/drop_a_e', SND_FILENAME)
 drop_a_e_kor = lambda: PlaySound('helid/drop_a_e_kor', SND_FILENAME)
 drop_a_d = lambda: PlaySound('helid/drop_a_d', SND_FILENAME)
 drop_a_b = lambda: PlaySound('helid/drop_a_b', SND_FILENAME)
->>>>>>> 926ab520f47e0ced6726188e82c179732b40a76e
 
 def ok():
     uus = Toplevel()
