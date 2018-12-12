@@ -13,7 +13,7 @@ background_image = ImageTk.PhotoImage(Image.open("pilt.jpg"))
 background_label = Label(raam, image=background_image)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-<<<<<<< HEAD
+
 a_keel = lambda: PlaySound('standard_a.wav', SND_FILENAME)
 e_korge = lambda: PlaySound('standard_e_korge.wav', SND_FILENAME)
 d_keel = lambda: PlaySound('standard_d', SND_FILENAME)
@@ -31,7 +31,6 @@ laul1 = lambda: PlaySound("Stairway", SND_FILENAME)
 laul2 = lambda: PlaySound("Nothing", SND_FILENAME)
 laul3 = lambda: PlaySound("Laporte", SND_FILENAME)
 
-=======
 #standard tuning
 a_keel = lambda: PlaySound('helid/standard_a', SND_FILENAME)
 e_korge = lambda: PlaySound('helid/standard_e_korge', SND_FILENAME)
@@ -184,7 +183,7 @@ def answer():
     messagebox.showinfo("Quit", "Thank you for using Guitar tuner")
     raam.destroy()
 
-<<<<<<< HEAD
+
 def varia():
     laused = ["Esimene kitarr loodi Vana-Egiptuses", "Maailma suurim kitarr on 13 meetrit pikk", "Maailma väikseim kitarr on 10 mikromeetrit pikk","Maailma kalleim kitarr maksab 2,8 miljonit dollarit","Inglismaal abiellus üks muusik oma kitarriga","Kitarrifirma Ibanez tõi esimest korda turule 7 ja 8 keelelised kitarrid", "Kõige pikem järjestikune kitarrimängimine kestis 114 tundi","Esimese elektrikitarri tegi Gibson 1936 aastal","Jimi Hendrix mängis kitarri tagurpidi, sest ta oli vasakukäeline","Fenderi kitarritööstus teeb päevas 90 000 keelt"]
     suvaline = randint(1,10)
@@ -231,12 +230,12 @@ def muusika():
     
 laulud = ttk.Button(raam, text="♪♫♬", command=muusika)
 laulud.place(x=270, y=275, width=30)
-=======
+
 button = Button(raam, text="OK", command=ok)
 button.pack()
 
 Button(text='Quit', command=answer).pack(side=BOTTOM)
->>>>>>> 926ab520f47e0ced6726188e82c179732b40a76e
+
 
 raam.mainloop()
 
