@@ -8,7 +8,11 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
+<<<<<<< HEAD
+set "VIRTUAL_ENV=C:\Users\Janar\Documents\guitar-tuner\venv"
+=======
 set "VIRTUAL_ENV=D:\Documents\guitar-tuner\venv"
+>>>>>>> 9a103faf50d3a37183bd061141cf8deb4cd0fa5d
 
 if not defined PROMPT (
     set "PROMPT=$P$G"
